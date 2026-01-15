@@ -3,10 +3,7 @@ package paqueteAgendaTelefonos;
 import java.util.ArrayList;
 import java.util.List;
 
-import paqueteAgendaTelefonos.Direccion;
-import paqueteAgendaTelefonos.Telefono;
-
-public class Contacto {
+class Contacto {
 	private int id;
 	private String nombre;
 	private String apellidos;

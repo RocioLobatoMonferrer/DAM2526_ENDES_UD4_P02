@@ -1,5 +1,5 @@
 package paqueteAgendaTelefonos;
 
-public enum TipoTelefono {
+enum TipoTelefono {
 	CASA, TRABAJO, PERSONAL, MOVIL, OTRO
 }

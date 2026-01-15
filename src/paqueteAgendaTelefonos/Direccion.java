@@ -1,6 +1,6 @@
 package paqueteAgendaTelefonos;
 
-public class Direccion {
+class Direccion {
 	private TipoVia tipoVia;
 	private int numero;
 	private String bloque;
