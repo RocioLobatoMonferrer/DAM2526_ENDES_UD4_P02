@@ -1,8 +1,5 @@
 package paqueteAgendaTelefonos;
 
-enum TipoVia {
-    CALLE,
-    AVENIDA,
-    PLAZA,
-    CARRETERA
+public enum TipoVia {
+	CALLE, AVENIDA, PLAZA, CARRETERA
 }
