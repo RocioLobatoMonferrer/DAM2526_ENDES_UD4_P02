@@ -62,7 +62,7 @@ public class Main {
 					System.out.println("No existe un contacto con ese ID.");
 				} else {
 					Telefono t = crearTelefono(sc);
-					c.agregarTelefono(t);
+					c.agregarTelefono();
 					System.out.println("Teléfono añadido.");
 				}
 

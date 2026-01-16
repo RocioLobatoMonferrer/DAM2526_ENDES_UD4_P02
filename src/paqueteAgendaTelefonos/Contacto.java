@@ -32,8 +32,8 @@ class Contacto {
 		return this.apellidos;
 	}
 
-	public void agregarTelefono(Telefono t) {
-		this.telefonos.add(t);
+	public void agregarTelefono(String numero, TipoTelefono tipo) {
+		this.telefonos.add(new Telefono(numero, tipo));
 	}
 
 	public List<Telefono> getTelefonos() {
