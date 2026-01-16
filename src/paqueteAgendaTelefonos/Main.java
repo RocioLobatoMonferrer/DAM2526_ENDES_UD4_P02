@@ -17,8 +17,7 @@ public class Main {
 			opcion = leerEntero(sc, "Opción: ");
 
 			if (opcion == 1) {
-				Contacto nuevo = crearContacto(sc, agenda.getSiguienteId());
-				agenda.agregarContacto(nuevo);
+				Contacto nuevo = crearContacto(sc, agenda.getSiguienteId(), agenda);
 				System.out.println("Contacto añadido con ID " + nuevo.getId());
 
 			} else if (opcion == 2) {
@@ -61,8 +60,7 @@ public class Main {
 				if (c == null) {
 					System.out.println("No existe un contacto con ese ID.");
 				} else {
-					Telefono t = crearTelefono(sc);
-					c.agregarTelefono();
+					crearTelefono(sc, c);
 					System.out.println("Teléfono añadido.");
 				}
 
@@ -90,27 +88,25 @@ public class Main {
 
 	// ---------- Creación de objetos desde consola ----------
 
-	private static Contacto crearContacto(Scanner sc, int id) {
+	private static Contacto crearContacto(Scanner sc, int id, Agenda agenda) {
 		String nombre = leerTextoNoVacio(sc, "Nombre: ");
 		String apellidos = leerTextoNoVacio(sc, "Apellidos: ");
 		String email = leerTexto(sc, "Email (opcional): ");
+		Contacto c = agenda.agregarContacto(id, nombre, apellidos, email);
 
-		Direccion direccion = crearDireccion(sc);
-
-		Contacto c = new Contacto(id, nombre, apellidos, email, direccion);
+		crearDireccion(sc, c);
 
 		int cuantos = leerEntero(sc, "¿Cuántos teléfonos quieres añadir ahora? (0..n): ");
 		int i = 0;
 		while (i < cuantos) {
-			Telefono t = crearTelefono(sc);
-			c.agregarTelefono(t);
+			crearTelefono(sc, c);
 			i++;
 		}
 
 		return c;
 	}
 
-	private static Direccion crearDireccion(Scanner sc) {
+	private static void crearDireccion(Scanner sc, Contacto c) {
 		System.out.println("\n--- Dirección ---");
 
 		TipoVia tipoVia = elegirTipoVia(sc);
@@ -122,18 +118,16 @@ public class Main {
 		String portal = leerTexto(sc, "Portal (opcional): ");
 		String letra = leerTexto(sc, "Letra (opcional): ");
 
-		Direccion d = new Direccion(tipoVia, numero, bloque, escalera, portal, letra);
-		return d;
+		c.agregarDireccion(tipoVia, numero, bloque, escalera, portal, letra);
 	}
 
-	private static Telefono crearTelefono(Scanner sc) {
+	private static void crearTelefono(Scanner sc, Contacto c) {
 		System.out.println("\n--- Teléfono ---");
 
 		String numero = leerTextoNoVacio(sc, "Número de teléfono: ");
 		TipoTelefono tipo = elegirTipoTelefono(sc);
 
-		Telefono t = new Telefono(numero, tipo);
-		return t;
+		c.agregarTelefono(numero, tipo);
 	}
 
 	private static TipoVia elegirTipoVia(Scanner sc) {

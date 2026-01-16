@@ -18,8 +18,10 @@ class Agenda {
 		return id;
 	}
 
-	public void agregarContacto(Contacto c) {
-		this.contactos.add(c);
+	public Contacto agregarContacto(int id, String nombre, String apellidos, String email) {
+		Contacto c = new Contacto(id, nombre, apellidos, email);
+		contactos.add(c);
+		return c;
 	}
 
 	public List<Contacto> listarContactos() {

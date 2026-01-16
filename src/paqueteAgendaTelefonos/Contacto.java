@@ -11,12 +11,11 @@ class Contacto {
 	private Direccion direccion;
 	private List<Telefono> telefonos;
 
-	public Contacto(int id, String nombre, String apellidos, String email, Direccion direccion) {
+	public Contacto(int id, String nombre, String apellidos, String email) {
 		this.id = id;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.direccion = direccion;
 		this.telefonos = new ArrayList<>();
 	}
 
@@ -34,6 +33,11 @@ class Contacto {
 
 	public void agregarTelefono(String numero, TipoTelefono tipo) {
 		this.telefonos.add(new Telefono(numero, tipo));
+	}
+
+	public void agregarDireccion(TipoVia tipoVia, int numero, String bloque, String escalera, String portal,
+			String letra) {
+		this.direccion = new Direccion(tipoVia, numero, bloque, escalera, portal, letra);
 	}
 
 	public List<Telefono> getTelefonos() {
