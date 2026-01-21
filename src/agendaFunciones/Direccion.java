@@ -1,6 +1,6 @@
-package paqueteAgendaTelefonos;
+package agendaFunciones;
 
-class Direccion {
+public class Direccion {
 	private TipoVia tipoVia;
 	private int numero;
 	private String bloque;
@@ -8,7 +8,7 @@ class Direccion {
 	private String portal;
 	private String letra;
 
-	public Direccion(TipoVia tipoVia, int numero, String bloque, String escalera, String portal, String letra) {
+	Direccion(TipoVia tipoVia, int numero, String bloque, String escalera, String portal, String letra) {
 		this.tipoVia = tipoVia;
 		this.numero = numero;
 		this.bloque = bloque;

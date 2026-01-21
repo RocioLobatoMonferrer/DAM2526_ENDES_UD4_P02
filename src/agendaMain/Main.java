@@ -1,8 +1,8 @@
-package paqueteAgendaTelefonos;
+package agendaMain;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import agendaFunciones.*;
 
 public class Main {
 

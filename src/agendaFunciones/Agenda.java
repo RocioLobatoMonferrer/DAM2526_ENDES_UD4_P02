@@ -1,9 +1,9 @@
-package paqueteAgendaTelefonos;
+package agendaFunciones;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Agenda {
+public class Agenda {
 	private List<Contacto> contactos;
 	private int siguienteId;
 
